@@ -1,0 +1,12 @@
+# Versions with which the published CSP+LDA cell was re-run and matched exactly
+# (Python 3.12.10, Windows 11). PyTorch is installed separately, with the CUDA
+# build used for the deep decoders:
+#   pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cu128
+numpy==2.4.4
+scipy==1.17.1
+scikit-learn==1.8.0
+pandas==3.0.2
+mne==1.11.0
+pyriemann==0.12
+matplotlib==3.10.8
+pillow==12.3.0

@@ -1,0 +1,46 @@
+family,contrast,metric,decoder,n,mean_diff,median_diff,W,W_plus,W_minus,p,method,r_rb,p_holm,alpha,significant
+A: all decoders,64 vs 8 electrodes,three-class kappa,all eight,30,0.0805916,0.0788361,13,452,13,1.63913e-07,exact,0.944086,9.83477e-07,0.05,True
+A: all decoders,8 vs 2 electrodes,three-class kappa,all eight,30,0.112061,0.0875584,12,453,12,1.30385e-07,exact,0.948387,9.12696e-07,0.05,True
+A: all decoders,64 vs 8 electrodes,three-class balanced accuracy,all eight,30,0.0447394,0.0445602,20,445,20,6.91041e-07,exact,0.913978,2.76417e-06,0.05,True
+A: all decoders,8 vs 2 electrodes,three-class balanced accuracy,all eight,30,0.0788318,0.0523231,13,452,13,1.63913e-07,exact,0.944086,9.83477e-07,0.05,True
+A: all decoders,64 vs 8 electrodes,detection (balanced accuracy),all eight,30,0.0651748,0.0663616,11,454,11,1.02445e-07,exact,0.952688,8.19564e-07,0.05,True
+A: all decoders,8 vs 2 electrodes,detection (balanced accuracy),all eight,30,0.0480708,0.0449022,33,432,33,5.9735e-06,exact,0.858065,1.79205e-05,0.05,True
+A: all decoders,64 vs 8 electrodes,lateralization above floor,all eight,30,0.00215533,0.00252973,179,286,179,0.280087,exact,0.230108,0.280087,0.05,False
+A: all decoders,8 vs 2 electrodes,lateralization above floor,all eight,30,0.0700908,0.056399,45,420,45,3.04952e-05,exact,0.806452,6.09905e-05,0.05,True
+B: per decoder,64 vs 8 electrodes,three-class kappa,CSP+LDA,30,0.0452853,0.04783,163,302,163,0.157948,exact,0.298925,0.315895,0.05,False
+B: per decoder,64 vs 8 electrodes,three-class kappa,FBCSP+SVM,30,0.105561,0.0910012,61,404,61,0.0001886,exact,0.737634,0.000943001,0.05,True
+B: per decoder,64 vs 8 electrodes,three-class kappa,Riemannian,30,0.0993061,0.0921582,62,403,62,0.000209127,exact,0.733333,0.000943001,0.05,True
+B: per decoder,64 vs 8 electrodes,three-class kappa,EEGNet,30,0.129664,0.113716,49,416,49,4.96842e-05,exact,0.789247,0.000397474,0.05,True
+B: per decoder,64 vs 8 electrodes,three-class kappa,EEGSym,30,0.0879501,0.109841,93,372,93,0.00322299,exact,0.6,0.00966897,0.05,True
+B: per decoder,64 vs 8 electrodes,three-class kappa,ShallowConvNet,30,0.0789126,0.065175,57,408,57,0.000123337,exact,0.754839,0.000863358,0.05,True
+B: per decoder,64 vs 8 electrodes,three-class kappa,Adaptive Deep CNN,30,0.0894975,0.0801187,57,408,57,0.000123337,exact,0.754839,0.000863358,0.05,True
+B: per decoder,64 vs 8 electrodes,three-class kappa,STIA-Net,30,0.0085567,0.0357123,201,264,201,0.529105,exact,0.135484,0.529105,0.05,False
+C: above floor at 8,lateralization vs 0,lateralization above floor,CSP+LDA,30,0.0611925,0.0571429,68,397,68,0.000380093,exact,0.707527,0.00152037,0.05,True
+C: above floor at 8,lateralization vs 0,lateralization above floor,FBCSP+SVM,30,0.0351404,0.0111112,193,272,193,0.416509,approx,0.169892,0.416509,0.05,False
+C: above floor at 8,lateralization vs 0,lateralization above floor,Riemannian,30,0.0702523,0.0361111,96,369,96,0.00403179,exact,0.587097,0.0120954,0.05,True
+C: above floor at 8,lateralization vs 0,lateralization above floor,EEGNet,30,0.115087,0.105952,31,434,31,3.40363e-05,approx,0.866667,0.000170181,0.05,True
+C: above floor at 8,lateralization vs 0,lateralization above floor,EEGSym,30,0.136329,0.136325,27,438,27,2.3488e-06,exact,0.883871,1.64416e-05,0.05,True
+C: above floor at 8,lateralization vs 0,lateralization above floor,ShallowConvNet,30,0.0944994,0.0777777,29,436,29,3.23914e-06,exact,0.875269,1.94348e-05,0.05,True
+C: above floor at 8,lateralization vs 0,lateralization above floor,Adaptive Deep CNN,30,0.147529,0.144048,20,445,20,6.91041e-07,exact,0.913978,5.52833e-06,0.05,True
+C: above floor at 8,lateralization vs 0,lateralization above floor,STIA-Net,30,-0.012611,-0.0111111,161.5,161.5,303.5,0.144162,approx,-0.305376,0.288323,0.05,False
+D: leader at 8 (three-class kappa),Riemannian vs CSP+LDA,three-class kappa,CSP+LDA,30,0.0686043,0.0430323,109,356,109,0.00993151,exact,0.531183,0.0496576,0.05,True
+D: leader at 8 (three-class kappa),Riemannian vs FBCSP+SVM,three-class kappa,FBCSP+SVM,30,0.0984175,0.100077,51,414,51,6.28661e-05,exact,0.780645,0.000377197,0.05,True
+D: leader at 8 (three-class kappa),Riemannian vs EEGNet,three-class kappa,EEGNet,30,0.0252759,-0.00309317,200,265,200,0.515848,exact,0.139785,1,0.05,False
+D: leader at 8 (three-class kappa),Riemannian vs EEGSym,three-class kappa,EEGSym,30,0.0173546,0.0377053,196,269,196,0.464545,exact,0.156989,1,0.05,False
+D: leader at 8 (three-class kappa),Riemannian vs ShallowConvNet,three-class kappa,ShallowConvNet,30,0.00657172,-0.0078835,231,234,231,0.983834,exact,0.00645161,1,0.05,False
+D: leader at 8 (three-class kappa),Riemannian vs Adaptive Deep CNN,three-class kappa,Adaptive Deep CNN,30,0.0274008,0.0362073,188,277,188,0.370741,exact,0.191398,1,0.05,False
+D: leader at 8 (three-class kappa),Riemannian vs STIA-Net,three-class kappa,STIA-Net,30,0.246398,0.246715,21,444,21,8.32602e-07,exact,0.909677,5.82822e-06,0.05,True
+D: leader at 8 (detection (balanced accuracy)),Riemannian vs CSP+LDA,detection (balanced accuracy),CSP+LDA,30,0.0514591,0.0281743,94,371,94,0.00347516,exact,0.595699,0.0139006,0.05,True
+D: leader at 8 (detection (balanced accuracy)),Riemannian vs FBCSP+SVM,detection (balanced accuracy),FBCSP+SVM,30,0.0589071,0.0642858,68,397,68,0.000380093,exact,0.707527,0.00228056,0.05,True
+D: leader at 8 (detection (balanced accuracy)),Riemannian vs EEGNet,detection (balanced accuracy),EEGNet,30,0.0489784,0.025397,107,358,107,0.00870546,exact,0.539785,0.0174109,0.05,True
+D: leader at 8 (detection (balanced accuracy)),Riemannian vs EEGSym,detection (balanced accuracy),EEGSym,30,0.0537444,0.0538767,87,378,87,0.00202018,exact,0.625806,0.0101009,0.05,True
+D: leader at 8 (detection (balanced accuracy)),Riemannian vs ShallowConvNet,detection (balanced accuracy),ShallowConvNet,30,0.0247863,0.0172463,163,302,163,0.15285,approx,0.298925,0.15285,0.05,False
+D: leader at 8 (detection (balanced accuracy)),Riemannian vs Adaptive Deep CNN,detection (balanced accuracy),Adaptive Deep CNN,30,0.0616422,0.057326,85,350,85,0.00416912,approx,0.609195,0.0139006,0.05,True
+D: leader at 8 (detection (balanced accuracy)),Riemannian vs STIA-Net,detection (balanced accuracy),STIA-Net,30,0.150283,0.192765,34,431,34,6.91786e-06,exact,0.853763,4.8425e-05,0.05,True
+D: leader at 8 (lateralization above floor),Adaptive Deep CNN vs CSP+LDA,lateralization above floor,CSP+LDA,30,0.086337,0.0801583,38,427,38,1.21836e-05,exact,0.836559,7.31014e-05,0.05,True
+D: leader at 8 (lateralization above floor),Adaptive Deep CNN vs FBCSP+SVM,lateralization above floor,FBCSP+SVM,30,0.112389,0.105159,40,425,40,1.59778e-05,exact,0.827957,7.98889e-05,0.05,True
+D: leader at 8 (lateralization above floor),Adaptive Deep CNN vs Riemannian,lateralization above floor,Riemannian,30,0.0772772,0.0642859,41,424,41,1.82446e-05,exact,0.823656,7.98889e-05,0.05,True
+D: leader at 8 (lateralization above floor),Adaptive Deep CNN vs EEGNet,lateralization above floor,EEGNet,30,0.032442,0.0299447,126,339,126,0.0277414,exact,0.458065,0.0554829,0.05,False
+D: leader at 8 (lateralization above floor),Adaptive Deep CNN vs EEGSym,lateralization above floor,EEGSym,30,0.0112006,0.004365,191,274,191,0.404495,exact,0.178495,0.404495,0.05,False
+D: leader at 8 (lateralization above floor),Adaptive Deep CNN vs ShallowConvNet,lateralization above floor,ShallowConvNet,30,0.0530301,0.0670637,84,381,84,0.00158328,exact,0.63871,0.00474985,0.05,True
+D: leader at 8 (lateralization above floor),Adaptive Deep CNN vs STIA-Net,lateralization above floor,STIA-Net,30,0.16014,0.151985,18,447,18,1.02408e-05,approx,0.922581,7.16857e-05,0.05,True

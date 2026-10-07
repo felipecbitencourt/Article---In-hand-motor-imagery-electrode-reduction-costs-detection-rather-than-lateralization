@@ -1,0 +1,55 @@
+cff-version: 1.2.0
+message: "If you use this code or these results, please cite the paper below."
+title: "In hand motor imagery, electrode reduction costs detection rather than lateralization"
+type: software
+license: MIT
+repository-code: "https://github.com/felipecbitencourt/Article---In-hand-motor-imagery-electrode-reduction-costs-detection-rather-than-lateralization"
+authors:
+  - given-names: Felipe Correa
+    family-names: Bitencourt
+    affiliation: "Universidade Federal de Ciências da Saúde de Porto Alegre (UFCSPA)"
+  - given-names: Eduarda Tessari
+    family-names: Pereira
+    affiliation: "Universidade Federal do Rio Grande do Sul (UFRGS)"
+  - given-names: Claudio
+    family-names: Salvalaio
+    affiliation: "Universidade Federal de Ciências da Saúde de Porto Alegre (UFCSPA)"
+  - given-names: Tiago Henrique
+    family-names: Falk
+    affiliation: "Institut National de la Recherche Scientifique (INRS)"
+  - given-names: Mariana
+    family-names: Recamonde Mendoza
+    affiliation: "Universidade Federal do Rio Grande do Sul (UFRGS)"
+  - given-names: Alcyr Alves
+    name-particle: de
+    family-names: Oliveira
+    name-suffix: Jr
+    affiliation: "Universidade Federal de Ciências da Saúde de Porto Alegre (UFCSPA)"
+preferred-citation:
+  type: conference-paper
+  title: "In hand motor imagery, electrode reduction costs detection rather than lateralization"
+  authors:
+    - given-names: Felipe Correa
+      family-names: Bitencourt
+      affiliation: "Universidade Federal de Ciências da Saúde de Porto Alegre (UFCSPA)"
+    - given-names: Eduarda Tessari
+      family-names: Pereira
+      affiliation: "Universidade Federal do Rio Grande do Sul (UFRGS)"
+    - given-names: Claudio
+      family-names: Salvalaio
+      affiliation: "Universidade Federal de Ciências da Saúde de Porto Alegre (UFCSPA)"
+    - given-names: Tiago Henrique
+      family-names: Falk
+      affiliation: "Institut National de la Recherche Scientifique (INRS)"
+    - given-names: Mariana
+      family-names: Recamonde Mendoza
+      affiliation: "Universidade Federal do Rio Grande do Sul (UFRGS)"
+    - given-names: Alcyr Alves
+      name-particle: de
+      family-names: Oliveira
+      name-suffix: Jr
+      affiliation: "Universidade Federal de Ciências da Saúde de Porto Alegre (UFCSPA)"
+  collection-title: "Anais da II Escola Regional de Aprendizado de Máquina e Inteligência Artificial da Região Sul (ERAMIA-RS 2026)"
+  publisher:
+    name: "Sociedade Brasileira de Computação (SBC)"
+  year: 2026
