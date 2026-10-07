@@ -62,6 +62,42 @@ The research code is published as it was run, so its comments and identifiers ar
 | evaluation | the three-class output is read at two levels. Level 1, detection (rest vs imagery): balanced accuracy. Level 2, lateralization (left vs right): accuracy over all true imagery epochs, whose chance is 0.5 (1 − FNR); we report the distance above that floor |
 | statistics | paired Wilcoxon signed-rank tests with the subject as the unit (n = 30), two-sided, α = 0.05, Holm correction within each family of tests |
 
+### Decoders
+
+The eight decoders come from our scoping review of machine learning for EEG hand motor imagery
+(Bitencourt et al., ERAMIA-RS 2025). Five follow the study they were taken from; CSP+LDA, EEGNet and
+ShallowConvNet are there for their transversal presence in the literature and are cited at the
+canonical source. The implementations follow each description without being integral
+reproductions; the table lists what differs. Every divergence is also declared, with its reason, in
+`MODELOS` of `experiments/hierarquico-8/_contrato.py`, and the runner refuses to start if a decoder
+redefines a field of the shared contract.
+
+| decoder | family | input | source | as run here, and what differs from the source |
+|---|---|---|---|---|
+| CSP+LDA | spatial filter | band-limited epoch → log-variance of 6 CSP components | Ramoser et al. 2000 | 6 components, Ledoit–Wolf regularized covariance |
+| FBCSP+SVM | spatial filter | 9 sub-bands of 4 Hz, 4–40 Hz → 4 CSP components per band → 12 features chosen by mutual information | Liu et al. 2023 | source: 7 sub-bands over 4–30 Hz, 2 components per band, 10 features. Linear SVM, C = 1, with probability outputs |
+| Riemannian | Riemannian | Ledoit–Wolf covariance → tangent space → logistic regression | Racz et al. 2024 | source: DCCA covariance and MDM classifier, 8–30 Hz. Here Ledoit–Wolf covariance (no DCCA), tangent space, logistic regression, 4–40 Hz |
+| EEGNet | deep, compact CNN | epoch, channels × 320 samples | Lawhern et al. 2018 | F1 = 16, D = 4, F2 = 64, dropout 0.5 (source: F1 = 8, D = 2, F2 = 16) |
+| EEGSym | deep, symmetric CNN | epoch split into left and right hemispheric branches | Pérez-Velasco et al. 2022 | 8 filters, dropout 0.4. The branches are assigned from each montage's channel names; the source fixes 8 or 16 channels |
+| ShallowConvNet | deep, shallow CNN | epoch, channels × 320 samples | Schirrmeister et al. 2017 | 40 filters, temporal kernel 25, pooling 75 / stride 15, dropout 0.5 |
+| Adaptive Deep CNN | deep CNN | epoch, channels × 320 samples | Zhang et al. 2021 | Deep ConvNet, four conv–pool blocks, dropout 0.5. The subject adaptation is the shared calibration below |
+| STIA-Net | deep, graph + attention | epoch, plus a phase-locking-value graph between channels | Ma et al. 2022 | GCN (64, 32) in parallel with a dilated TCN (16, 32, 64) and 8-head attention, dropout 0.5; source band 8–30 Hz, here 4–40 Hz |
+
+What is shared, and therefore not in the table:
+
+- **Output.** Every decoder has two binary heads, detection (rest vs imagery) and lateralization
+  (left vs right), combined into the three-class output that is scored.
+- **Signal.** The preprocessing above is applied once by the runner; no decoder filters or
+  re-references again, which is why the source bands of FBCSP+SVM, Riemannian and STIA-Net are not used.
+- **Pool training.** Imagery runs of the 98 pool subjects. Deep decoders: Adam, learning rate 10⁻³,
+  weight decay 10⁻⁴, batch 16, up to 200 epochs, early stopping with patience 20 on a 15% split.
+- **Calibration on the target** (48 epochs). Classical decoders keep the spatial filters, or the
+  tangent-space reference, estimated on the pool and refit only the classifier heads. Deep decoders
+  fine-tune the whole network on a copy of the pool model: learning rate 10⁻⁴, up to 80 epochs,
+  patience 15.
+
+### Montages
+
 The ladder is nested: each montage contains all the smaller ones, and the runner aborts at start-up
 if it does not. Rungs follow the distance to C3 and C4, except the one of 8, which adds Cz and Fz.
 

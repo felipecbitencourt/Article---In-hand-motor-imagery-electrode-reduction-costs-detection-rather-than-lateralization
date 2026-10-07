@@ -7,7 +7,7 @@ research repository, kept as close to the original as possible. Changes:
   - every figure is saved as PNG (400 dpi), SVG and PDF;
   - Figure 2: STIA-Net is no longer drawn in grey (it was confused with the
     light grey lines of the non-highlighted decoders), and an in-figure legend
-    names the light grey lines and the dotted chance/floor line;
+    names the light grey lines;
   - Figure S2 (new): the same two panels with all eight decoders labelled;
   - English labels by default (IDIOMA=pt for the Portuguese version).
 Usage, from the package root:  python analysis/figures.py
@@ -230,13 +230,11 @@ ax[1].set_title(L["t3b"], loc="left", fontsize=6.9)
 for a_, itens in pontas3.items():
     rotula_pontas(a_, itens, x[-1])
 # Reviewer 2 (ERAMIA-RS 2026): the light grey lines were not identified. They are
-# the five decoders that are not highlighted; the dotted line is chance (a) and the
-# floor of lateralization (b). Both are now named inside the figure, not only in
-# the caption.
+# the five decoders that are not highlighted, and are now named inside the figure.
+# The dotted line (chance in (a), floor of lateralization in (b)) is left unlabelled.
 from matplotlib.lines import Line2D
 ax[0].legend(handles=[
-    Line2D([], [], color=CINZA_OUTROS, lw=0.8, marker="o", ms=1.6, label=L["outros"]),
-    Line2D([], [], color="#888", ls=":", lw=0.7, label=L["piso_leg"])],
+    Line2D([], [], color=CINZA_OUTROS, lw=0.8, marker="o", ms=1.6, label=L["outros"])],
     loc="upper left", frameon=False, fontsize=5.6, handlelength=1.8,
     borderaxespad=0.2, labelspacing=0.3)
 # w_pad maior que o das outras figuras: "Adaptive Deep CNN" e o rotulo mais

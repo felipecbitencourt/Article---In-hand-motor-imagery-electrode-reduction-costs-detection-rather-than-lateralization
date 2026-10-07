@@ -1,25 +1,7 @@
-# EEG data (fetched by download_physionet.py, ~1.7 GB)
+# EEG data: downloaded by download_physionet.py, never committed
 data_base_physionet/
-
-# Local benchmark re-runs (the published run lives in results/bench_contrato_mi/)
+# new runs of the benchmark; the published run lives in results/
 experiments/hierarquico-8/results/
-
-# Python
 __pycache__/
-*.py[cod]
-.venv/
-venv/
-env/
-.ipynb_checkpoints/
-
-# Model checkpoints
-*.pt
-*.pth
-*.ckpt
-
-# OS / editors
-.DS_Store
-Thumbs.db
-desktop.ini
-.vscode/
-.idea/
+*.pyc
+*.part
